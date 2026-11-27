@@ -1,0 +1,23 @@
+# Cloudflare config for the single-file worker (deploy/worker.js).
+# Used when deploying from GitHub (Workers Builds) or with `npx wrangler deploy` from this folder.
+name = "khogon"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+# Keep variables you set in the dashboard when a new version is deployed.
+keep_vars = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "khogon-db"
+# No database_id: Wrangler creates the D1 database on first deploy (automatic provisioning).
+# If your deploy fails here, create "khogon-db" in the dashboard and add: database_id = "<id>"
+
+[ai]
+binding = "AI"
+
+[triggers]
+crons = ["5 * * * *"]
+
+[observability]
+enabled = true
