@@ -10,6 +10,7 @@ keep_vars = true
 [[d1_databases]]
 binding = "DB"
 database_name = "khogon-db"
+database_id = "669e0ea8-29a6-481f-b27e-4b57a8a15cea"
 # No database_id: Wrangler creates the D1 database on first deploy (automatic provisioning).
 # If your deploy fails here, create "khogon-db" in the dashboard and add: database_id = "<id>"
 
